@@ -27,7 +27,7 @@ umi.use(signerIdentity(signer));
 (async () => {
   try {
     //chanege image path to your image path
-    const image = await readFile("file-path");
+    const image = await readFile("mint-image.png");
 
     //change the image name and mime type
     // const file =
