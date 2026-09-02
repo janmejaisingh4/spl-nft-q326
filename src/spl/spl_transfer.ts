@@ -20,6 +20,8 @@ import {
   TOKEN_PROGRAM_ADDRESS,
 } from "@solana-program/token";
 
+const token_decimals = 1_000_000n;
+
 const rpc = createSolanaRpc("https://api.devnet.solana.com");
 
 const rpcSubscriptions = createSolanaRpcSubscriptions(
@@ -63,8 +65,8 @@ const to = address("CgHtxNsaPenUu5SeLzcnDP4PKwEKaAzenbWPuBE5iJAA");
     });
 
     const transferTx = getTransferCheckedInstruction({
-      amount: 50n,
-      decimals: 0,
+      amount: 150n*token_decimals,
+      decimals: 6,
       mint,
       source: fromAta,
       destination: toAta,
